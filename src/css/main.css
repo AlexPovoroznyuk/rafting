@@ -1,0 +1,35 @@
+/* -------------------------------
+Main style file
+--------------------------------*/
+
+/* Put your vendor styles here */
+
+@import "../../node_modules/normalize.css/normalize.css";
+
+
+
+/* Put you custom styles below */
+@import "./components/fonts.css";
+@import "./components/_general.pcss";
+@import "./components/_reuse-elements.pcss";
+@import "./components/_header.pcss";
+@import "./components/_first-screen.pcss";
+@import "./components/_tour-list.pcss";
+@import "./components/_select-place.pcss";
+@import "./components/_offer.pcss";
+@import "./components/_footer.pcss";
+@import "./components/_partners.pcss";
+@import "./components/_form.pcss";
+@import "./components/_modals.pcss";
+@import "./components/_select-tour.pcss";
+@import "./components/_popular.pcss";
+@import "./components/_latest-news.pcss";
+@import "./components/_blog.pcss";
+@import "./components/_news-final.pcss";
+@import "./components/_product-fs.pcss";
+@import "./components/_review-tour.pcss";
+@import "./components/_tour-photos.pcss";
+@import "./components/_tour-variants.pcss";
+@import "./components/_about-fs.pcss";
+@import "./components/_about-info.pcss";
+@import "./components/_instructors.pcss";

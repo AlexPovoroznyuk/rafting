@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.656" height="26.325" viewBox="0 0 26.656 26.325">
+  <g id="terms-icon1" transform="translate(-1379.1 -471)">
+    <g id="XMLID_3464_" transform="translate(1385.361 471.5)">
+      <path id="XMLID_3465_" d="M1420.421,491.943h8.7v-2.611a2.155,2.155,0,0,0-.332-1.14l-1.8-2.777a.9.9,0,0,0-.787-.414h-2.881a1,1,0,0,0-.788.414l-1.8,2.777a2.032,2.032,0,0,0-.332,1.14v8.953" transform="translate(-1417.706 -482.202)" fill="none" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="XMLID_3467_" d="M1418.84,489.364h-8.7v6.093a1.366,1.366,0,0,1-1.368,1.368h0a1.367,1.367,0,0,1-1.368-1.368V477.821a2.205,2.205,0,0,1,.352-1.2l2.756-4.269a1.872,1.872,0,0,1,1.554-.85h4.87a1.85,1.85,0,0,1,1.554.85l2.756,4.269a2.205,2.205,0,0,1,.352,1.2v17.636a1.366,1.366,0,0,1-1.368,1.368h0a1.367,1.367,0,0,1-1.368-1.368V483.023h-8.7" transform="translate(-1407.4 -471.5)" fill="none" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="XMLID_3466_" x2="8.725" transform="translate(2.715 16.082)" fill="none" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+    <g id="XMLID_3624_" transform="translate(1402.396 477.717)">
+      <path id="XMLID_3626_" d="M1489.6,555.485v2.2a1.433,1.433,0,0,0,1.43,1.43h0a1.433,1.433,0,0,0,1.43-1.43v-2.217l-1.43-1.264Z" transform="translate(-1489.6 -543.278)" fill="none" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="XMLID_3591_" y1="10.942" transform="translate(1.451)" fill="none" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+    <g id="XMLID_3469_" transform="translate(1379.6 477.717)">
+      <path id="XMLID_3593_" d="M1382.46,555.485v2.2a1.433,1.433,0,0,1-1.43,1.43h0a1.433,1.433,0,0,1-1.43-1.43v-2.217l1.43-1.264Z" transform="translate(-1379.6 -543.278)" fill="none" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="XMLID_3592_" y1="10.942" transform="translate(1.43)" fill="none" stroke="#344154" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

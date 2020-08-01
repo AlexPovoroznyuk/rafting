@@ -1,0 +1,80 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    outline: none;
+}
+a{
+    text-decoration: none;
+    color: #221E1E;
+}
+h1{
+    margin: 0;
+}
+html{
+    font-size: 20px;
+}
+.slick-list{
+    width: 100%;
+    overflow: hidden;
+}
+
+.slick-track{
+    display: flex;
+}
+
+.slick-arrow{
+    position: absolute;
+}
+button{
+    background: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    line-height: .8;
+    font: unset;
+}
+input{
+    outline: none;
+}
+
+body{
+    font-family: "HelveticaNeue", serif;
+    font-weight: 400;
+    font-size: calc(.5825rem + .58vw);
+    line-height: 1.15;
+    color: #2E323B;
+    transition: font-size 0s;
+    &.modal-open{
+        overflow: hidden;
+        .overlay{
+            opacity: 10;
+            pointer-events: auto;
+          }
+    }
+}
+section{
+    max-width: 100%;
+    overflow: hidden;
+}
+img{
+    width: 100%;
+}
+a {
+    cursor: default;
+    &[href]{
+        cursor: pointer;
+    }
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+p, h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}

@@ -1,0 +1,73 @@
+.tour-photos{
+    position: relative;
+    padding: 2.6em 0 3.5em;
+    .bg-wr{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 35em;
+        width: 100%;
+        background-color: #FAFBFF;
+        z-index: -1;
+    }
+    .slick-arrow{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 2;
+        width: 3em;
+        height: 3em;
+    }
+    .arrow-next{
+        right: -1em;
+    }
+    .arrow-prev{
+        left: -1em;
+    }
+    .container{
+        max-width: 60em;
+        margin: 0 auto;
+        padding: 0 1em;
+    }
+    .title{
+        margin-bottom: 3em;
+        h4{
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #2D3841;
+            text-transform: uppercase;
+        }
+    }
+    .slider-outer{
+        position: relative;
+        margin-bottom: 1.7em;
+        @media(max-width: 768px){
+            margin-bottom: 1em;
+          }
+        .slider{
+
+        }
+        .item{
+
+        }
+        img{
+
+        }
+    }
+    .preview-section{
+        display: flex;
+        .item{
+            &:not(:last-child){
+              margin-right: 1.5em;
+              @media(max-width: 768px){
+                margin-right: .5em;
+              }
+            }
+        }
+        img{
+
+        }
+    }
+}
