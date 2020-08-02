@@ -1,6 +1,6 @@
 .select-tour{
     padding-top: 8em;
-    padding-bottom: 9em;
+    padding-bottom: 4em;
     @media(max-width: 480px){
         padding-bottom: 3em;
     }
@@ -17,9 +17,13 @@
         min-height: 40em;
     }
     .top-part{
-        max-width: 60em;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 0 1em;
+        padding: 0 7em;
+        @media(max-width: 1440px){
+            max-width: 60em;
+            padding: 0 1em;
+        }
     }
     .subtitle{
         margin-bottom: .3em;
@@ -31,7 +35,7 @@
         }
     }
     .title{
-        margin-bottom: 4.7em;
+        margin-bottom: 2em;
         position: relative;
         @media(max-width: 480px){
             font-size: .7em;
@@ -87,9 +91,9 @@
         }
     }
     .items{
-        padding: 0 1.75em;
+        padding: 0 7em;
         position: relative;
-        max-width: 74em;
+        max-width: 100%;
         margin: 0 auto;
         opacity: 0;
         position: absolute;
@@ -99,6 +103,10 @@
         left: 0;
         right: 0;
         overflow: hidden;
+        @media(max-width: 1440px){
+            max-width: 74em;
+            padding: 0 1.75em;
+        }
         @media(max-width: 1360px){
             padding: 0;
         }
@@ -157,22 +165,40 @@
     .tour-slider{
 
         display: flex;
-        max-width: 60em;;
+        max-width: calc(100% + 2em);
+        width: calc(100% + 2em);
         position: relative;
-        right: -1em;
+        right: 0;
         margin: 0 auto;
+        @media(max-width: 1440px){
+            max-width: 60em;
+            right: -1em;
+            width: auto;
+        }
     }
     .item{
         margin-right: 2em;
+        position: relative;
+        &:hover{
+            .bg{
+                opacity: 0;
+            }
+            .img{
+                transform: scale(1.03);
+            }
+        }
         .img-container{
             width: 100%;
             position: relative;
             margin-bottom: .6em;
+            overflow: hidden;
         }
                                 .img{
-                                    padding-top: 110%;
+                                    padding-top: 77%;
                                     background-size: cover;
                                     background-position: center;
+                                    will-change: transform;
+                                        transition: transform .3s;
                                 }
                                 .bg{
                                     position: absolute;
@@ -183,6 +209,7 @@
                                     width: 100%;
                                     height: 100%;
                                     background-color: rgba(0,0,0,.27);
+                                    transition: opacity .3s;
                                 }
                             .caption{
                                 margin-bottom: .35em;
@@ -225,6 +252,7 @@
                                         color: #A5A5A5;
                                         font-size: .8em;
                                         line-height: 1.5;
+                                        text-decoration: line-through;
 
                                     }
                                 }
@@ -241,21 +269,50 @@
                                     }
                                 }
                             .buy-btn{
-                                max-width: 5.5em;
+                                max-width: fit-content;
                                 margin-bottom: .85em;
-
-                                button{
+                                position: relative;
+                                z-index: 3;
+                                a{
                                     width: 100%;
-                                    padding: .8em .5em;
+                                    padding: .8em 1.5em;
                                     background-color: #2D3841;
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
+                                    position: relative;
+                                    display: block;
+                                    cursor: pointer;
+                                    &::after, &::before{
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        right: 0;
+                                        height: 2px;
+                                        width: 100%;
+                                        background-color: #2D3841;
+                                        transition: .3s;
+                                    }
+                                    &::after{
+                                        bottom: 0;
+                                    }
+                                    &::before{
+                                        top: 0;
+                                    }
+                                    &:hover{
+                                        &::after{
+                                            transform: translateY(2px);
+                                        }
+                                        &::before{
+                                            transform: translateY(-2px);
+                                        }
+                                    }
                                     span{
                                         font-size: .8em;
                                         text-transform: uppercase;
                                         line-height: 1;
                                         color: #fff;
+                                        display: block;
                                     }
                                 }
                             }

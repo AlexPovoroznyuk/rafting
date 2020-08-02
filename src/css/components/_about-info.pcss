@@ -1,14 +1,17 @@
 .about-info{
-    overflow: unset;
     .container{
-        width: 60em;
-        padding: 3.6em 1em 4.1em;
+        width: 100%;
+        padding: 3.6em 7em 4.1em;
         margin: auto;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         overflow: unset;
         max-width: 100%;
+        @media(max-width: 1440px){
+            width: 60em;
+        padding: 3.6em 1em 4.1em;
+        }
         @media(max-width: 480px){
             flex-direction: column;
         }

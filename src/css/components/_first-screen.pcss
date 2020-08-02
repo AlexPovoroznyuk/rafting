@@ -11,9 +11,13 @@
     .fs-wrapper{
 
         height: 100%;
-        max-width: 61em;
+        max-width: 100%;
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 0 7em;
+    @media(max-width: 992px){
+        padding: 0 1em;
+        max-width: 61em;
+    }
     @media(max-width: 992px){
 
         font-size: 1.3em;
@@ -79,6 +83,7 @@
                         text-transform: uppercase;
                         font-weight: 600;
                         letter-spacing: -.015em;
+                        margin-left: -.05em;
                         @media(max-width: 992px){
 
                             font-size: 3em;

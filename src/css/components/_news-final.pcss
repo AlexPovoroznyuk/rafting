@@ -1,9 +1,13 @@
 .news-final{
     padding-top: 7.5em;
     .caption-wrap{
-        max-width: 50.2em;
-        padding: 0 1em;
+        max-width: 100%;
+        padding: 0 12em;
         margin: 0 auto;
+        @media(max-width: 1440px){
+            max-width: 50.2em;
+            padding: 0 1em;
+        }
     }
     .news-info{
 
@@ -28,12 +32,17 @@
         }
     }
     .content{
-        max-width: 50.2em;
-        padding: 0 1em;
+        max-width: 100%;
+        padding: 0 12em;
         margin: 0 auto;
+        @media(max-width: 1440px){
+            max-width: 50.2em;
+            padding: 0 1em;
+           }
         div{
             margin-bottom: calc(2em / .9);
             font-size: .9em;
+            line-height: 1.4;
 
         }
         img{
@@ -43,10 +52,14 @@
 
    .socials{
        display: flex;
-       max-width: 50.2em;
-       padding: 0 1em;
+       max-width: 100%;
+       padding: 0 12em;
        margin: 0 auto;
        align-items: center;
+       @media(max-width: 1440px){
+        max-width: 50.2em;
+        padding: 0 1em;
+       }
     .caption{
         margin: 0;
         margin-right: 1em;

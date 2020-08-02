@@ -35,17 +35,25 @@
         }
     }
     .top-part{
-        max-width: 60em;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 0 1em;
+        padding: 0 7em;
+        @media(max-width: 1440px){
+            max-width: 60em;
+            padding: 0 1em;
+        }
     }
     .text{
-        max-width: 60em;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 0 1em;
+        padding: 0 7em;
+        @media(max-width: 1440px){
+            max-width: 60em;
+            padding: 0 1em;
+        }
     }
     .subtitle{
-        margin-bottom: 3.5em;
+        margin-bottom: 2em;
         p{
             font-size: 1.4em;
             font-weight: 600;
@@ -74,7 +82,7 @@
             margin-bottom: .2em;
         }
         .title{
-            margin-bottom: 4.7em;
+            margin-bottom: 2.2em;
         }
     }
     .tabs-outer{
@@ -82,7 +90,7 @@
     }
     .tabs{
         display: flex;
-        margin-bottom: 4.4em;
+        margin-bottom: 2.4em;
         min-width: 57em;
         .tab-item{
             &:not(:last-child){
@@ -118,9 +126,12 @@
     }
     .tour-wr{
         display: flex;
-        max-width: 58em;
+        max-width: 100%;
         margin: auto;
         align-items: flex-start;
+        @media(max-width: 1440px){
+            max-width: 58em;
+        }
         @media(max-width: 992px){
             flex-direction: column;
             font-size: 1.3em;
@@ -129,6 +140,10 @@
         width: 59.5%;
         position: relative;
         z-index: 3;
+        padding-left: 7em;
+        @media(max-width: 1440px){
+            padding-left: 1em;
+        }
         @media(max-width: 992px){
             width: 100%;
             margin-bottom: 3em;

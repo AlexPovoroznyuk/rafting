@@ -30,22 +30,22 @@ function onViewport(item, position){
 $(document).ready(function(){
     $(".large-logo").each(function(){
         if(onViewport($(this), "center")){
-            $(this).addClass("active")
+            $(this).addClass("active");
         }
-    })
+    });
     $(".stroke-animation").each(function(){
         if(onViewport($(this), "center")){
-            $(this).addClass("active")
+            $(this).addClass("active");
         }
-    })
+    });
     $("footer").each(function(){
         if(onViewport($(this), "bottom")){
-            $(this).addClass("active")
+            $(this).addClass("active");
         }
-    })
+    });
     $("section").each(function(){
         if(onViewport($(this), "top")){
-            $(this).addClass("active")
+            $(this).addClass("active");
         }
     });
     $(".autoscroll").click(function (event) {
@@ -61,7 +61,7 @@ $(document).ready(function(){
         dots: false,
         appendArrows: $(".select-tour .items1"),
         prevArrow: `
-            <button class="arrow arrow-prev">
+            <button class="arrow arrow-prev to-left del-90">
                 <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59">
                     <g id="arrow-left" transform="translate(371 -1984)">
                     <g id="Эллипс_34" class="circles" data-name="Эллипс 34" transform="translate(-371 1984)" fill="#fff" stroke="#ddd" stroke-width="1">
@@ -78,7 +78,7 @@ $(document).ready(function(){
             </div>
         `,
         nextArrow: `
-            <button class="arrow arrow-next">
+            <button class="arrow arrow-next to-right del-90">
                 <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59">
                     <g id="arrow-right" transform="translate(-312 2043) rotate(180)">
                     <g id="Эллипс_34" class="circles" data-name="Эллипс 34" transform="translate(-371 1984)" fill="#fff" stroke="#ddd" stroke-width="1">
@@ -291,18 +291,6 @@ $(document).ready(function(){
     });
 
 
-    $('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        var nextImg = $(`.slider .slide[data-slide=${nextSlide}]`).attr("data-img");
-        console.log(nextImg)
-        $(".promotion .screen").addClass("fade");
-        setTimeout(() => {
-            $(".promotion .screen").css("background-image", `url(${nextImg})`);
-            setTimeout(() => {
-                $(".promotion .screen").removeClass("fade");
-            }, 200);
-        }, 300);
-    });
-
     $(".slider-integration").slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -361,6 +349,7 @@ $(document).ready(function(){
         autoplay: false,
         arrows: true,
         dots: false,
+        infinite: false,
         prevArrow: `
             <button class="arrow arrow-prev">
                 <svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59">
@@ -408,11 +397,19 @@ $(document).ready(function(){
         console.log(currentSlide);
         $(".tour-variant .trigger").removeClass("active");
         $(`.tour-variant .trigger[data-slide="${currentSlide}"]`).addClass("active");
+
     });
     $(".tour-photos .preview-section .item").click(function(){
         let slideNum = $(this).attr("data-dot");
-        $(".tour-photos .slider").slick("slickGoTo", slideNum)
+        $(".tour-photos .slider").slick("slickGoTo", slideNum);
+
     })
+    $('.tour-photos .slider').on('afterChange', function(event, slick, currentSlide){
+        console.log(currentSlide);
+        $(".tour-photos .preview-section .item").removeClass("active");
+        $(`.tour-photos .preview-section .item[data-dot="${currentSlide}"]`).addClass("active");
+
+    });
 });
 
 $(".select-tour-wr .tab-item a").click(function(e){
@@ -552,7 +549,7 @@ $(document).scroll(function(){
         setTimeout(function(){
             $("header").removeClass("scrolled");
             $("header").removeClass("scrolled--up");
-        },100)
+        },100);
         }
   });
 
@@ -564,4 +561,24 @@ $(".burger").click(function(){
 
 $("header .close-trigger").click(function(){
     $(".mobile-menu").removeClass("active");
+});
+
+
+$(".tour-list .item").mouseover(function(){
+    var currVid = $(this).find("video").attr("id");
+    document.querySelectorAll(".tour-list video").forEach(function(item){
+        if(!(item.getAttribute("id") == currVid)){
+            item.pause();
+        }
+        else{
+          document.querySelector(`#${currVid}`).play();
+        }
+    });
+
+});
+
+$(".tour-list").mouseleave(function(){
+    document.querySelectorAll(".tour-list video").forEach(function(item){
+        item.pause();
+    });
 });

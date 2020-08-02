@@ -12,18 +12,40 @@
             opacity: .3;
             margin-bottom: 5em;
             transition: .3s;
+            position: relative;
             @media(max-width: 567px){
                 margin-bottom: 2em;
             }
             &.active{
                 opacity: 1;
             }
+            &:hover{
+                opacity: 1;
+                &::after{
+                    left: 0;
+                    width: 100%;
+                }
+            }
+            &::after{
+                content: "";
+                transition: all .4s;
+                position: absolute;
+                bottom: -5px;
+                right: 0;
+                width: 0;
+                height: 2px;
+                background-color: #1e1e1e;
+            }
         }
     }
     .text{
-        max-width: 60em;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 0 1em;
+        padding: 0 7em;
+        @media(max-width: 1440px){
+            max-width: 60em;
+            padding: 0 1em;
+        }
     }
     .slick-arrow{
         position: absolute;
@@ -33,8 +55,15 @@
         z-index: 2;
         width: 3em;
         height: 3em;
+        transition: .3s;
         @media(max-width: 620px){
             display: none!important;
+        }
+        &:hover svg .circles{
+            stroke: #000;
+        }
+        svg .circles{
+            transition: .3s;
         }
     }
     .arrow-next{
@@ -42,6 +71,9 @@
     }
     .arrow-prev{
         left: -1.5em;
+    }
+    .slick-disabled{
+        opacity: 0;
     }
     .subtitle{
         margin-bottom: .5em;
@@ -74,10 +106,13 @@
     }
    .tour-wr{
         display: flex;
-        max-width: 37.2em;
+        max-width: 42.2em;
         margin: auto;
         align-items: flex-start;
         position: relative;
+        @media(max-width: 1440px){
+            max-width: 37.2em;
+        }
         @media(max-width: 992px){
             flex-direction: column;
 
@@ -89,8 +124,11 @@
     box-shadow: 0 3px 34px rgba(0,0,0, .07);
     padding: 2em 2.5em 2.5em;
     margin: 0 3em;
-    opacity: .3;
-    transition: .3s;
+
+    &>div{
+        opacity: .3;
+        transition: .3s;
+    }
     @media(max-width: 992px){
         font-size: 1.2em;
     }
@@ -98,7 +136,10 @@
         margin: 0 1em;
     }
     &.slick-current{
-        opacity: 1;
+        &>div{
+            opacity: 1;
+        }
+
     }
     @media(max-width: 992px){
         width: 100%;

@@ -2,19 +2,38 @@
     padding-top: 3em;
     &.final-container{
         .news-caption{
-            max-width: 50.2em;
-            padding: 0 1em;
+            max-width: 100%;
+            padding: 0 12em;
             margin: 0 auto;
             margin-bottom: 2.2em;
+            @media(max-width: 1440px){
+                max-width: 50.2em;
+                padding: 0 1em;
+            }
             p{
                 font-size: 1.2em;
                 font-weight: 600;
             }
         }
         .items{
-            max-width: 50.2em;
-            padding: 0 1em;
+            max-width: 100%;
+            padding: 0 12em;
             margin: 0 auto;
+            @media(max-width: 1440px){
+                max-width: 50.2em;
+                padding: 0 1em;
+            }
+            .item{
+                width: calc(50% - .5em);
+                margin-bottom: 1.5em;
+                &:nth-child(3n){
+                    margin-right: 1em;
+
+                }
+                &:nth-child(2n){
+                    margin-right: 0;
+                }
+            }
         }
     }
     .latest-news-wr{
@@ -27,9 +46,13 @@
 
     }
     .top-part{
-        max-width: 60em;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 0 1em;
+        padding: 0 7em;
+        @media(max-width: 1440px){
+            max-width: 60em;
+            padding: 0 1em;
+        }
     }
     .subtitle{
         margin-bottom: 4.2em;
@@ -57,15 +80,28 @@
     }
     .items{
         display: flex;
-        max-width: 60em;;
+        max-width: 100%;
         position: relative;
         margin: 0 auto;
-        padding: 0 1em;
-            flex-wrap: wrap;
+        padding: 0 7em;
+        flex-wrap: wrap;
+        @media(max-width: 1440px){
+            max-width: 60em;
+            padding: 0 1em;
+        }
+
     }
 
     .item{
         width: calc(33.3333% - .7em);
+        &:hover{
+            .img{
+                transform: scale(1.03);
+            }
+            .bg{
+                opacity: 0;
+            }
+        }
         &:not(:last-child){
            margin-right: 1em;
         }
@@ -91,14 +127,17 @@
             width: 100%;
             position: relative;
             margin-bottom: .4em;
+            overflow: hidden;
         }
         .txt{
-            padding: 0 .7em;
+
         }
     .img{
         padding-top: 60%;
         background-size: cover;
         background-position: center;
+        transition: transform .3s;
+        will-change: transform;
     }
     .bg{
         position: absolute;
@@ -109,6 +148,7 @@
         width: 100%;
         height: 100%;
         background-color: rgba(0,0,0,.27);
+        transition: opacity .3s;
     }
 .caption{
     margin-bottom: .55em;
@@ -127,7 +167,7 @@
     margin-bottom: .35em;
     p{
         color: #9BA6B2;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 1;
     }
 }
