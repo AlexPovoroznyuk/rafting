@@ -28,6 +28,7 @@ function onViewport(item, position){
 }
 
 $(document).ready(function(){
+
     $(".large-logo").each(function(){
         if(onViewport($(this), "center")){
             $(this).addClass("active");
@@ -54,7 +55,7 @@ $(document).ready(function(){
 	    $('body,html').animate({scrollTop: el}, 1000);
     });
     $(".tour-slider1").slick({
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: false,
         arrows: true,
@@ -96,24 +97,27 @@ $(document).ready(function(){
         `,
         responsive: [
             {
-              breakpoint: 767,
+              breakpoint: 1200,
               settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-
+                slidesToShow: 3
               }
             },
             {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 520,
+              settings: {
+                slidesToShow: 1,
+              }
             }
-        ]
+          ]
     });
     $(".tour-slider2").slick({
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: false,
         arrows: true,
@@ -155,24 +159,27 @@ $(document).ready(function(){
         `,
         responsive: [
             {
-              breakpoint: 767,
+              breakpoint: 1200,
               settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-
+                slidesToShow: 3
               }
             },
             {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 520,
+              settings: {
+                slidesToShow: 1,
+              }
             }
-        ]
+          ]
     });
     $(".tour-slider3").slick({
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: false,
         arrows: true,
@@ -214,24 +221,27 @@ $(document).ready(function(){
         `,
         responsive: [
             {
-              breakpoint: 767,
+              breakpoint: 1200,
               settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-
+                slidesToShow: 3
               }
             },
             {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 520,
+              settings: {
+                slidesToShow: 1,
+              }
             }
-        ]
+          ]
     });
     $(".tour-slider4").slick({
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: false,
         arrows: true,
@@ -273,21 +283,24 @@ $(document).ready(function(){
         `,
         responsive: [
             {
-              breakpoint: 767,
+              breakpoint: 1200,
               settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-
+                slidesToShow: 3
               }
             },
             {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 520,
+              settings: {
+                slidesToShow: 1,
+              }
             }
-        ]
+          ]
     });
 
 
@@ -348,6 +361,7 @@ $(document).ready(function(){
         slidesToScroll: 1,
         autoplay: false,
         arrows: true,
+        initialSlide: 1,
         dots: false,
         infinite: false,
         prevArrow: `
@@ -410,6 +424,22 @@ $(document).ready(function(){
         $(`.tour-photos .preview-section .item[data-dot="${currentSlide}"]`).addClass("active");
 
     });
+    $(".select-tour .item").mouseover(function(){
+        console.log("sherh")
+        var currVid = $(this).find("video").attr("id");
+        document.querySelectorAll(".select-tour video").forEach(function(item){
+            if(!(item.getAttribute("id") == currVid)){
+                item.pause();
+            }
+            else{
+              document.querySelector(`#${currVid}`).play();
+            }
+        });
+
+    });
+    if($(window).innerWidth() < 991){
+        $(".select-tour .item .bg").attr("autoplay", "autoplay")
+    }
 });
 
 $(".select-tour-wr .tab-item a").click(function(e){
@@ -564,18 +594,7 @@ $("header .close-trigger").click(function(){
 });
 
 
-$(".tour-list .item").mouseover(function(){
-    var currVid = $(this).find("video").attr("id");
-    document.querySelectorAll(".tour-list video").forEach(function(item){
-        if(!(item.getAttribute("id") == currVid)){
-            item.pause();
-        }
-        else{
-          document.querySelector(`#${currVid}`).play();
-        }
-    });
 
-});
 
 $(".tour-list").mouseleave(function(){
     document.querySelectorAll(".tour-list video").forEach(function(item){

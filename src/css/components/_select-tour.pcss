@@ -131,7 +131,7 @@
             margin: auto;
             z-index: 2;
             @media(max-width: 1360px){
-                bottom: 50%;
+
                 &.arrow-prev{
                     left: 1em;
                 }
@@ -163,169 +163,166 @@
         }
     }
     .tour-slider{
-
+        width: 100%;
         display: flex;
-        max-width: calc(100% + 2em);
-        width: calc(100% + 2em);
         position: relative;
         right: 0;
         margin: 0 auto;
         @media(max-width: 1440px){
             max-width: 60em;
-            right: -1em;
+            padding: 0 1em;
             width: auto;
+        }
+        @media(max-width: 1150px){
+            padding: 0 2.5em;
         }
     }
     .item{
-        margin-right: 2em;
+        width: 100%;
         position: relative;
+
         &:hover{
-            .bg{
-                opacity: 0;
+            .text{
+                p{
+                    &::after {
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+                .btn{
+                    opacity: 1;
+                    pointer-events: auto;
+                }
             }
-            .img{
-                transform: scale(1.03);
+
+        }
+    }
+    .item-inner{
+        padding-top: 183%;
+        position: relative;
+    }
+    .btn{
+        padding: 1em 1.5em;
+        margin-top: 2em;
+        width: fit-content;
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s;
+        &:hover{
+            &::before {
+                transform: translateY(-2px);
+            }
+            &::after {
+                transform: translateY(2px);
             }
         }
-        .img-container{
-            width: 100%;
+        &::before, &::after {
+            content: "";
+            transition: background-color .5s,transform .3s,height .2s,opacity .3s;
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            height: 3px;
+            background-color: transparent;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+        }
+        &::before {
+            top: -1px;
+            border-top: 1px solid #fff;
+        }
+        &::after {
+            bottom: -1px;
+            border-bottom: 1px solid #fff;
+        }
+        span {
+            font-size: .9em;
+            color: #fff;
+            line-height: 1;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+    .text{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 4em;
+        p{
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
             position: relative;
-            margin-bottom: .6em;
-            overflow: hidden;
+            &::after {
+                content: "";
+                transition: all .4s;
+                position: absolute;
+                bottom: -5px;
+                right: 0;
+                width: 0;
+                height: 2px;
+                background-color: #fff;
+            }
         }
-                                .img{
-                                    padding-top: 77%;
-                                    background-size: cover;
-                                    background-position: center;
-                                    will-change: transform;
-                                        transition: transform .3s;
-                                }
-                                .bg{
-                                    position: absolute;
-                                    top: 0;
-                                    bottom: 0;
-                                    right: 0;
-                                    left: 0;
-                                    width: 100%;
-                                    height: 100%;
-                                    background-color: rgba(0,0,0,.27);
-                                    transition: opacity .3s;
-                                }
-                            .caption{
-                                margin-bottom: .35em;
-                                p{
-                                    font-size: .9em;
-                                    font-weight: 600;
-                                    display: -webkit-box;
-                                    -webkit-box-orient: vertical;
-                                    -webkit-line-clamp: 2;
-                                    overflow: hidden;
-                                    line-height: 1.3;
-                                }
-                            }
-                            .time{
-                                margin-bottom: .35em;
-                                p{
-                                    color: #A5A5A5;
-                                    font-size: .8em;
-                                    line-height: 1.5;
-                                }
-                                span{
-                                    color: #2D3841;
-                                }
-                            }
-                            .price{
-                                display: flex;
-                                align-items: flex-start;
-                                margin-bottom: .75em;
-                            }
-                                .price-value{
-                                    margin-right: 1em;
-                                    p{
-                                        font-size: 1.4em;
-                                        color: #FFA008;
-                                        &:not(.old-price){
-                                            font-weight: 600;
-                                        }
-                                    }
-                                    .old-price{
-                                        color: #A5A5A5;
-                                        font-size: .8em;
-                                        line-height: 1.5;
-                                        text-decoration: line-through;
+    }
+    .bg-outer{
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(0, 0 , 0, .25);
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .bg{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: auto;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        /* transition: .3s; */
+    }
 
-                                    }
-                                }
-                                .sticker{
-                                    padding: .2em .4em;
-                                    background-color: #ff4d4d;
-                                    margin-top: .45em;
-                                    p{
-                                        font-size: 11px;
-                                        line-height: .8;
-                                        color: #fff;
-                                        font-weight: 600;
-                                        text-transform: uppercase;
-                                    }
-                                }
-                            .buy-btn{
-                                max-width: fit-content;
-                                margin-bottom: .85em;
-                                position: relative;
-                                z-index: 3;
-                                a{
-                                    width: 100%;
-                                    padding: .8em 1.5em;
-                                    background-color: #2D3841;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    position: relative;
-                                    display: block;
-                                    cursor: pointer;
-                                    &::after, &::before{
-                                        content: '';
-                                        position: absolute;
-                                        left: 0;
-                                        right: 0;
-                                        height: 2px;
-                                        width: 100%;
-                                        background-color: #2D3841;
-                                        transition: .3s;
-                                    }
-                                    &::after{
-                                        bottom: 0;
-                                    }
-                                    &::before{
-                                        top: 0;
-                                    }
-                                    &:hover{
-                                        &::after{
-                                            transform: translateY(2px);
-                                        }
-                                        &::before{
-                                            transform: translateY(-2px);
-                                        }
-                                    }
-                                    span{
-                                        font-size: .8em;
-                                        text-transform: uppercase;
-                                        line-height: 1;
-                                        color: #fff;
-                                        display: block;
-                                    }
-                                }
-                            }
-                            .info-list{
-                                ul{
-
-                                }
-                                    li{
-                                        color: #A5A5A5;
-                                        font-size: .8em;
-                                        line-height: 1.5;
-                                    }
-                                }
+    .hide-lnk{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        z-index: 2;
     }
 
 }

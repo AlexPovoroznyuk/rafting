@@ -65,10 +65,7 @@
                     width: calc((100% - .8em) / 2);
                     margin-bottom: 1.5em;
                 }
-                @media(max-width: 680px){
-                    width: 100%;
-                   font-size: 1.3em;
-                }
+
             }
                .photo{
                     margin-bottom: .7em;
@@ -87,7 +84,9 @@
                         }
                     }
                     .descrition{
-
+                        @media(max-width: 680px){
+                            font-size: 1.2em;
+                        }
                         p{
                             font-size: .75em;
                             line-height: 1.5;

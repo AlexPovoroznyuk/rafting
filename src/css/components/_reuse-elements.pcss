@@ -133,6 +133,7 @@
 .active{
   .to-right{
     opacity: 1;
+    transition-property: transform, opacity;
     transition-duration: .6s;
     transition-timing-function: cubic-bezier(.455,.03,.515,.955);
     transform: none;
@@ -147,6 +148,7 @@
 .active{
   .to-left{
     opacity: 1;
+    transition-property: transform, opacity;
     transition-duration: .6s;
     transition-timing-function: cubic-bezier(.455,.03,.515,.955);
     transform: none;
@@ -193,6 +195,7 @@
 .active{
   .to-top{
     opacity: 1;
+    transition-property: transform, opacity;
     transition-duration: .6s;
     transition-timing-function: cubic-bezier(.455,.03,.515,.955);
     transform: none;
@@ -235,6 +238,9 @@
   }
   .del-150{
     transition-delay: 1.5s;
+  }
+  .del-165{
+    transition-delay: 1.65s;
   }
   .valid-error{
     color: #eb0045;

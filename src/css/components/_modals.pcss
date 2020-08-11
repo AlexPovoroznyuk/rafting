@@ -24,7 +24,7 @@
         .modal-content{
             @media(max-width: 567px){
                 max-width: calc(100% - 2em);
-                font-size: 1.1em;
+                font-size: 1.2em;
                 .input-item {
                     input{
                         font-size: .85em;
@@ -50,7 +50,8 @@
             margin-bottom: 1em;
         }
         .modal-content{
-            max-width: 25em;
+            max-width: 20em;
+            font-size: 1.3em;
         }
     }
     .form-container{
@@ -138,6 +139,9 @@
             width: 14em;
             margin-left: auto;
             position: relative;
+            @media(max-width: 567px){
+                width: 100%;
+            }
                 &::before, &::after{
                     content: "";
                     transition: background-color .5s,transform .3s,height .2s,opacity .3s;

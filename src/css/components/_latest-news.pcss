@@ -33,6 +33,13 @@
                 &:nth-child(2n){
                     margin-right: 0;
                 }
+                @media(max-width: 567px){
+                    margin-bottom: 3em;
+                    width: 100%;
+                    &:not(:last-child){
+                        margin-right: 0;
+                     }
+                }
             }
         }
     }
@@ -120,8 +127,11 @@
             }
         }
         @media(max-width: 567px){
-            margin-bottom: 2em;
+            margin-bottom: 3em;
             width: 100%;
+            &:not(:last-child){
+                margin-right: 0;
+             }
         }
         .img-container{
             width: 100%;
@@ -153,6 +163,11 @@
 .caption{
     margin-bottom: .55em;
     min-height: 3.5em;
+    @media(max-width: 992px){
+        margin-bottom: .55em;
+        min-height: 2.5em;
+
+    }
     p{
         font-size: .9em;
         font-weight: 600;
